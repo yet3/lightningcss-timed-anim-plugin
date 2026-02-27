@@ -16,7 +16,9 @@ export const handleAtUseStep: IAtAnimSubHandler = (rule) => {
 		return false;
 	}
 
-	const step = definedSteps.get(identToken.value.value);
+	const step = definedSteps.get(
+		`${data.loc.source_index}-${identToken.value.value}`,
+	);
 	if (!step) return false;
 
 	const times = prelude.filter((el) => el.type === "time");

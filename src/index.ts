@@ -35,7 +35,10 @@ const visitor = (_config?: IConfig): Visitor<typeof customAtRules> => {
 		Rule: {
 			custom: {
 				"anim-step"(rule) {
-					definedSteps.set(rule.prelude.value, rule.body.value);
+					definedSteps.set(
+						`${rule.loc.source_index}-${rule.prelude.value}`,
+						rule.body.value,
+					);
 					return [];
 				},
 				anim(rule) {
