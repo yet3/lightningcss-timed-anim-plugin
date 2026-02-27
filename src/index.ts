@@ -22,6 +22,10 @@ const customAtRules = {
 		prelude: "<custom-ident>",
 		body: "style-block",
 	},
+	"anim-gstep": {
+		prelude: "<custom-ident>",
+		body: "style-block",
+	},
 	step: {
 		prelude: "<time>#",
 		body: "style-block",
@@ -39,6 +43,10 @@ const visitor = (_config?: IConfig): Visitor<typeof customAtRules> => {
 						`${rule.loc.source_index}-${rule.prelude.value}`,
 						rule.body.value,
 					);
+					return [];
+				},
+				"anim-gstep"(rule) {
+					definedSteps.set(rule.prelude.value, rule.body.value);
 					return [];
 				},
 				anim(rule) {
