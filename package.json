@@ -9,6 +9,7 @@
 	"version": "1.0.0",
 	"scripts": {
 		"build": "vite build",
+		"prepare": "vite run build",
 		"test": "vitest"
 	},
 	"devDependencies": {
