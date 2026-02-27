@@ -3,6 +3,10 @@
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"type": "module",
+	"license": "MIT",
+	"author": "yet3",
+	"description": "Lightningcss plugins for making precisely timed keyframe animations",
+	"version": "1.0.0",
 	"scripts": {
 		"build": "vite build",
 		"test": "vitest"
@@ -18,5 +22,17 @@
 	},
 	"peerDependencies": {
 		"lightningcss": "^1.31.1"
-	}
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/yet3/lightningcss-timed-anim-plugin.git"
+	},
+	"bugs": {
+		"url": "https://github.com/yet3/lightningcss-timed-anim-plugin/issues"
+	},
+	"homepage": "https://github.com/yet3/lightningcss-timed-anim-plugin#readme",
+	"files": [
+		"dist",
+		"README.md"
+	]
 }
