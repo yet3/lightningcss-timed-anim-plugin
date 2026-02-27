@@ -9,8 +9,9 @@
 	"version": "1.0.0",
 	"scripts": {
 		"build": "vite build",
+		"test": "vitest",
 		"prepare": "vite build",
-		"test": "vitest"
+		"prepublishOnly": "vitest run && bun run prepare"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.4.4",
