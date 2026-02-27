@@ -7,7 +7,7 @@ import type {
 import { handleAtStep } from "$rules/handle-at-step";
 import { handleAtUseAnim } from "$rules/handle-at-use-anim";
 import { handleAtUseStep } from "$rules/handle-at-use-step";
-import { allAnims, globalSteps } from "$src/state";
+import { allAnims, definedSteps } from "$src/state";
 import type { IAtAnimSubHandler, IStep } from "$src/types";
 import { type IConfig, parseConfig } from "$utils/config";
 import { makeKeyframesRule } from "$utils/make-keyframes-rule";
@@ -35,7 +35,7 @@ const visitor = (_config?: IConfig): Visitor<typeof customAtRules> => {
 		Rule: {
 			custom: {
 				"anim-step"(rule) {
-					globalSteps.set(rule.prelude.value, rule.body.value);
+					definedSteps.set(rule.prelude.value, rule.body.value);
 					return [];
 				},
 				anim(rule) {

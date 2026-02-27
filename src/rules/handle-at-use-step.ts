@@ -1,5 +1,5 @@
 import type { TokenOrValue, UnknownAtRule } from "lightningcss";
-import { globalSteps } from "$src/state";
+import { definedSteps } from "$src/state";
 import type { IAtAnimSubHandler } from "$src/types";
 import { parseeTime } from "$utils/pares-time";
 
@@ -16,7 +16,7 @@ export const handleAtUseStep: IAtAnimSubHandler = (rule) => {
 		return false;
 	}
 
-	const step = globalSteps.get(identToken.value.value);
+	const step = definedSteps.get(identToken.value.value);
 	if (!step) return false;
 
 	const times = prelude.filter((el) => el.type === "time");
