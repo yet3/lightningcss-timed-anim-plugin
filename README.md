@@ -4,7 +4,7 @@ A lightingcss custom rules for making precisely timed keyframe animations.
 
 ### Installation
 ```
-npm install --save-dev lightningcss
+npm install --save-dev @yet3/lightningcss-timed-anim-plugin 
 ```
 
 ### Usage
