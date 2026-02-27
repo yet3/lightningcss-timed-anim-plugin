@@ -1,6 +1,6 @@
-# lightningcss-anim-plugin
+# lightingcss-timed-anim-pulgin
 
-A lightingcss custom rules for making precisely timed keyframe animations.
+A lightingcss plugin for making precisely timed keyframe animations.
 
 ### Installation
 ```
