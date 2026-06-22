@@ -1,6 +1,6 @@
 import { definedSteps } from "$src/state";
 import type { IAtAnimSubHandler, ICustomRule } from "$src/types";
-import { parseeTime } from "$utils/pares-time";
+import { parseTime } from "$utils/parse-time";
 
 export const handleAtUseStep: IAtAnimSubHandler = (rule) => {
 	if (rule.type !== "custom") return false;
@@ -22,8 +22,8 @@ export const handleAtUseStep: IAtAnimSubHandler = (rule) => {
 	if (!step) return false;
 
 	const times = prelude.filter((el) => el.type === "time");
-	const duration = parseeTime(times[0]);
-	const wait = parseeTime(times[1]);
+	const duration = parseTime(times[0]);
+	const wait = parseTime(times[1]);
 
 	return {
 		totalTime: duration + wait,
