@@ -1,15 +1,15 @@
-import type { TokenOrValue, UnknownAtRule } from "lightningcss";
 import { definedSteps } from "$src/state";
-import type { IAtAnimSubHandler } from "$src/types";
+import type { IAtAnimSubHandler, ICustomRule } from "$src/types";
 import { parseeTime } from "$utils/pares-time";
 
 export const handleAtUseStep: IAtAnimSubHandler = (rule) => {
-	if (rule.type !== "unknown") return false;
+	if (rule.type !== "custom") return false;
 
-	const data = rule.value as UnknownAtRule;
+	const data = rule.value as unknown as ICustomRule;
 	if (data.name !== "use-step") return false;
+	if (data.prelude.type !== "token-list") return false;
 
-	const prelude = data.prelude as TokenOrValue[];
+	const prelude = data.prelude.value;
 	const identToken = prelude[0];
 
 	if (identToken?.type !== "token" || identToken.value.type !== "ident") {

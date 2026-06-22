@@ -30,6 +30,14 @@ const customAtRules = {
 		prelude: "<time>#",
 		body: "style-block",
 	},
+	"use-step": {
+		prelude: "*",
+		body: null,
+	},
+	"use-anim": {
+		prelude: "*",
+		body: null,
+	},
 } satisfies CustomAtRules;
 
 const visitor = (_config?: IConfig): Visitor<typeof customAtRules> => {
